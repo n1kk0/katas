@@ -1,0 +1,28 @@
+{
+  "name": "typescript_katas",
+  "version": "1.0.0",
+  "description": "TypeScript Katas",
+  "author": "Nicolas Moussikian",
+  "license": "ISC",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "build": "tsc",
+    "build:watch": "onchange 'src/**/*.ts' -- npm run build",
+    "view:coverage": "serve coverage/lcov-report",
+    "clean": "rm -rf coverage src/**/*.js src/**/*.map",
+    "start": "node dist/app.js"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.8",
+    "@types/mocha": "^7.0.1",
+    "@types/source-map-support": "^0.5.1",
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "onchange": "^6.1.0",
+    "serve": "^11.3.0",
+    "source-map-support": "^0.5.16",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  }
+}

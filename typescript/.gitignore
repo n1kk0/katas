@@ -1,5 +1,6 @@
 dist
 node_modules
+.nyc_output
 src/**/*.js
 src/**/*.map
 coverage

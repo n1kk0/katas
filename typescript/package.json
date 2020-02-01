@@ -6,21 +6,21 @@
   "license": "ISC",
   "main": "app.js",
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "test": "tsc && nyc mocha --require ts-node/register --require source-map-support/register --recursive test/**/*.test.ts",
+    "coverage": "nyc npm run test",
     "build": "tsc",
-    "build:watch": "onchange 'src/**/*.ts' -- npm run build",
-    "view:coverage": "serve coverage/lcov-report",
-    "clean": "rm -rf coverage src/**/*.js src/**/*.map",
-    "start": "node dist/app.js"
+    "build:watch": "onchange 'src/**/*.ts' -- npm run build"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.8",
     "@types/mocha": "^7.0.1",
     "@types/source-map-support": "^0.5.1",
     "chai": "^4.2.0",
     "mocha": "^7.0.1",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^15.0.0",
     "onchange": "^6.1.0",
-    "serve": "^11.3.0",
     "source-map-support": "^0.5.16",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"

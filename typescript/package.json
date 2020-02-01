@@ -7,7 +7,6 @@
   "main": "app.js",
   "scripts": {
     "test": "tsc && nyc mocha --require ts-node/register --require source-map-support/register --recursive test/**/*.test.ts",
-    "coverage": "nyc npm run test",
     "build": "tsc",
     "build:watch": "onchange 'src/**/*.ts' -- npm run build"
   },

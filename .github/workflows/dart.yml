@@ -12,9 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Go to Dart directory
-      run: cd dart
-    - name: Install dependencies
-      run: pub get
     - name: Run tests
-      run: pub run test
+      run: |
+        cd dart
+        pub get
+        pub run test

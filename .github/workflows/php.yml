@@ -12,5 +12,6 @@ jobs:
 
     - name: Run test suite
       run: |
+        cd php
         composer install
         vendor/bin/phpunit tests

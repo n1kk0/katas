@@ -12,3 +12,8 @@
 ## Python
 
 `cd python && python -m unittest discover`
+
+## PHP
+`composer install`
+
+`cd php && vendor/bin/phpunit tests`

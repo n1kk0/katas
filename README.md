@@ -14,6 +14,5 @@
 `cd python && python -m unittest discover`
 
 ## PHP
-`composer install`
 
-`cd php && vendor/bin/phpunit tests`
+`cd php && composer install && vendor/bin/phpunit tests`

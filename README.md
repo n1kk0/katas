@@ -8,3 +8,7 @@
 ## TypeScript
 
 `cd typescript && npm run test`
+
+## Python
+
+`cd python && python -m unittest discover`

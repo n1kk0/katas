@@ -1,7 +1,4 @@
 class MyTree(dict):
-    def __init__(self):
-        self.dict = dict()
-
     def addAndSortPaths(self, paths):
         paths.sort()
 
@@ -14,7 +11,7 @@ class MyTree(dict):
         if path[0] == "/":
             pathItems.pop(0)
 
-        subDict = self.dict
+        subDict = self
 
         for pathItem in pathItems:
             try:
@@ -27,7 +24,7 @@ class MyTree(dict):
         out = ""
 
         if subDict is None:
-            subDict = self.dict
+            subDict = self
 
         for key in subDict:
             out += ("    " * depth) + key + "\n"
@@ -43,3 +40,13 @@ def render_tree(paths):
     myTree.addAndSortPaths(paths)
 
     return myTree.toString()
+
+print(render_tree([
+    '/home/michel/photos/wallpaper.jpg',
+    '/etc/passwd',
+    '/etc/nginx/conf.d/website.conf',
+    '/home/michel/cv.pdf',
+    '/etc/hosts',
+    '/home/michel/photos/profile.jpg',
+    '/home/michel'
+]))

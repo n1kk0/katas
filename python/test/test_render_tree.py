@@ -26,5 +26,23 @@ home
             wallpaper.jpg
 ''')
 
+        self.assertEqual(render_tree(["/1/2/3/4/5/6/7/8/9", "1/2/3/33"]), '''1
+    2
+        3
+            4
+                5
+                    6
+                        7
+                            8
+                                9
+            33
+''')
+
+        self.assertEqual(render_tree(["pouet", "/pouet/pouet"]), '''pouet
+    pouet
+''')
+
+        self.assertEqual(render_tree([]), "")
+
 if __name__ == '__main__':
     unittest.main()

@@ -2,7 +2,7 @@ class MyTree(dict):
     def __init__(self):
         self.dict = dict()
 
-    def addPaths(self, paths):
+    def addAndSortPaths(self, paths):
         paths.sort()
 
         for path in paths:
@@ -40,6 +40,6 @@ class MyTree(dict):
 
 def render_tree(paths):
     myTree = MyTree()
-    myTree.addPaths(paths)
+    myTree.addAndSortPaths(paths)
 
     return myTree.toString()

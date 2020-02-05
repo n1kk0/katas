@@ -2,8 +2,8 @@ import unittest
 
 from src.render_tree import render_tree
 
-class TestFilterList(unittest.TestCase):
-    def test_filter(self):
+class TestRenderTree(unittest.TestCase):
+    def test_render(self):
         self.assertEqual(render_tree([
             '/home/michel/photos/wallpaper.jpg',
             '/etc/passwd',

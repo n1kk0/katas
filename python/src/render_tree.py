@@ -1,5 +1,3 @@
-import collections
-
 class MyTree(dict):
     def addPaths(self, paths):
         for path in paths:

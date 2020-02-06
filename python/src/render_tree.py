@@ -43,13 +43,3 @@ class MyTree(dict):
 
 def render_tree(paths):
     return MyTree().addPaths(paths).toString()
-
-print(render_tree([
-    '/home/michel/photos/wallpaper.jpg',
-    '/etc/passwd',
-    '/etc/nginx/conf.d/website.conf',
-    '/home/michel/cv.pdf',
-    '/etc/hosts',
-    '/home/michel/photos/profile.jpg',
-    '/home/michel'
-]))

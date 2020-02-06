@@ -3,6 +3,8 @@ class MyTree(dict):
         for path in paths:
             self.addPath(path)
 
+        return self
+
     def addPath(self, path):
         pathItems = path.split("/")
 
@@ -26,6 +28,7 @@ class MyTree(dict):
 
     def toString(self, subDict = None, depth = 0):
         out = ""
+        nextDepth = depth + 1
 
         if subDict is None:
             subDict = self.deepSortDict()
@@ -34,16 +37,12 @@ class MyTree(dict):
             out += ("    " * depth) + key + "\n"
 
             if len(subDict.get(key)) != 0:
-                nextDepth = depth + 1
                 out += self.toString(subDict.get(key), nextDepth)
 
         return out
 
 def render_tree(paths):
-    myTree = MyTree()
-    myTree.addPaths(paths)
-
-    return myTree.toString()
+    return MyTree().addPaths(paths).toString()
 
 print(render_tree([
     '/home/michel/photos/wallpaper.jpg',

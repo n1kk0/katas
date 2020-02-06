@@ -17,3 +17,4 @@ jobs:
         cd dart
         pub get
         pub run test
+        pub run test_coverage

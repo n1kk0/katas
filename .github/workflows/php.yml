@@ -14,4 +14,4 @@ jobs:
       run: |
         cd php
         composer install
-        vendor/bin/phpunit tests
+        vendor/bin/phpunit tests --coverage-text

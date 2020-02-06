@@ -16,4 +16,6 @@ jobs:
     - name: Launch tests
       run: |
         cd python
+        pip install coverage
         python -m unittest discover -v
+        python -m coverage run -m unittest discover

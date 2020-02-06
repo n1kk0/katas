@@ -1,5 +1,7 @@
 # katas
 
+http://codewars.com
+
 ## Dart
 ![Dart CI](https://github.com/n1kk0/katas/workflows/Dart%20CI/badge.svg)
 ![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/dart/coverage_badge.svg?sanitize=true)

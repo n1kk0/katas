@@ -1,7 +1,7 @@
 import collections
 
 class MyTree(dict):
-    def addAndSortPaths(self, paths):
+    def addPaths(self, paths):
         for path in paths:
             self.addPath(path)
 
@@ -43,7 +43,7 @@ class MyTree(dict):
 
 def render_tree(paths):
     myTree = MyTree()
-    myTree.addAndSortPaths(paths)
+    myTree.addPaths(paths)
 
     return myTree.toString()
 

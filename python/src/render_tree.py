@@ -1,7 +1,7 @@
+import collections
+
 class MyTree(dict):
     def addAndSortPaths(self, paths):
-        paths.sort()
-
         for path in paths:
             self.addPath(path)
 
@@ -20,11 +20,17 @@ class MyTree(dict):
                 subDict[pathItem] = {}
                 subDict = subDict[pathItem]
 
+    def sortDict(self, subDict = None):
+        if subDict is None:
+            subDict = self
+
+        return {key: self.sortDict(value) if isinstance(value, dict) else value for key, value in sorted(subDict.items())}
+
     def toString(self, subDict = None, depth = 0):
         out = ""
 
         if subDict is None:
-            subDict = self
+            subDict = self.sortDict()
 
         for key in subDict:
             out += ("    " * depth) + key + "\n"

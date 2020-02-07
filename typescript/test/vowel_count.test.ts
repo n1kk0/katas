@@ -2,7 +2,7 @@ import { VowelCount } from '../src/vowel_count';
 import { assert } from 'chai';
 import 'mocha';
 
-describe("getCount", function() {
+describe("vowelCount", function() {
   it ("should count vowels", function() {
     assert.strictEqual(VowelCount.getCount("abracadabra"), 5);
   });

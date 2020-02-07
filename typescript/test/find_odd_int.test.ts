@@ -2,7 +2,7 @@ import { findOdd } from '../src/find_odd_int';
 import { assert } from 'chai';
 import 'mocha';
  
-describe('Example tests', function() {
+describe('findOddInt', function() {
   doTest([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5], 5);
   doTest([1,1,2,-2,5,2,4,4,-1,-2,5], -1);
   doTest([20,1,1,2,2,3,3,5,5,4,20,4,5], 5);

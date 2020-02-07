@@ -3,7 +3,7 @@ use PHPUnit\Framework\TestCase;
 
 require __DIR__ . "/../src/breakChocolate.php";
 
-class MyTestCases extends TestCase
+class BreakChocolateTests extends TestCase
 {
     public function testThatSomethingShouldHappen() {
       $this->assertEquals(breakChocolate(5, 5), 24);

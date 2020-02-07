@@ -7,8 +7,7 @@
   "main": "app.js",
   "scripts": {
     "test": "tsc && nyc --reporter=clover mocha --require ts-node/register --require source-map-support/register --recursive test/**/*.test.ts && coverage-badger -r coverage/clover.xml -d ./",
-    "build": "tsc",
-    "build:watch": "onchange 'src/**/*.ts' -- npm run build"
+    "watch": "onchange 'src/**/*.ts' -- npm run test"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",

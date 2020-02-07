@@ -6,7 +6,7 @@
   "license": "ISC",
   "main": "app.js",
   "scripts": {
-    "test": "tsc && nyc mocha --require ts-node/register --require source-map-support/register --recursive test/**/*.test.ts",
+    "test": "tsc && nyc --reporter=clover mocha --require ts-node/register --require source-map-support/register --recursive test/**/*.test.ts && coverage-badger -r coverage/clover.xml -d ./",
     "build": "tsc",
     "build:watch": "onchange 'src/**/*.ts' -- npm run build"
   },
@@ -16,6 +16,7 @@
     "@types/mocha": "^7.0.1",
     "@types/source-map-support": "^0.5.1",
     "chai": "^4.2.0",
+    "coverage-badger": "^1.0.1",
     "mocha": "^7.0.1",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^15.0.0",

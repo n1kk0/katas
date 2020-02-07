@@ -1,6 +1,6 @@
 # katas
 
-http://codewars.com
+[Code Wars](http://codewars.com)
 
 ## Dart
 ![Dart CI](https://github.com/n1kk0/katas/workflows/Dart%20CI/badge.svg)
@@ -10,6 +10,7 @@ http://codewars.com
 
 ## TypeScript
 ![Node.js CI](https://github.com/n1kk0/katas/workflows/Node.js%20CI/badge.svg)
+![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/typescript/coverage.svg?sanitize=true)
 
 `cd typescript && npm install && npm run test`
 

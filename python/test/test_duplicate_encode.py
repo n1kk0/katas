@@ -16,6 +16,10 @@ class TestDuplicateEncode(unittest.TestCase):
 
         self.assertEqual(duplicate_encode("(( @"), "))((")
 
+        self.assertEqual(
+            duplicate_encode("na)eeeFuTyT(wlHJFukvkabv!y@Fkvu"),
+            '()())))))))((((())))))()()())))'
+        )
 
 if __name__ == '__main__':
     unittest.main()

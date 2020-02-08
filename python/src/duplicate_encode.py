@@ -3,7 +3,7 @@ def duplicate_encode(word):
     out = ""
 
     for letter in word:
-        if letters.get(letter):
+        if letters.get(letter.lower()):
             letters[letter.lower()] += 1
         else:
             letters[letter.lower()] = 1

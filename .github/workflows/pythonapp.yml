@@ -21,10 +21,15 @@ jobs:
     - name: Lint with flake8
       run: |
         cd python
-        flake8 .
+        flake8 . -v
     - name: Launch tests
       run: |
         cd python
         coverage run -m unittest discover -v
         coverage report -m
         coverage-badge -o coverage.svg
+    - name: Archive Python code coverage badge
+      uses: actions/upload-artifact@v1
+      with:
+        name: python-code-coverage-badge
+        path: python/coverage.svg

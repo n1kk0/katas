@@ -21,3 +21,12 @@ jobs:
         cd typescript
         npm install
         npm run test
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        echo `git add -A && git commit -m "Change TypeScript Coverage Badge"`
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}

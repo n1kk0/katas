@@ -26,6 +26,7 @@ jobs:
         cd python
         coverage run -m unittest discover -v
         coverage report -m
+        rm coverage.svg
         coverage-badge -o coverage.svg
     - name: Commit files
       run: |

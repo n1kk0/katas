@@ -22,5 +22,6 @@
 
 ## PHP
 ![PHP Composer](https://github.com/n1kk0/katas/workflows/PHP%20Composer/badge.svg)
+![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/php/coverage.svg?sanitize=true)
 
 `cd php && composer install && vendor/bin/phpunit tests --coverage-text`

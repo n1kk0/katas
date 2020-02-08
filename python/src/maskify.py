@@ -8,7 +8,7 @@ def maskify(cc):
             out += letter
         else:
             out += "#"
-        
+
         counter += 1
 
     return out

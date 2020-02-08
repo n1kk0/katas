@@ -16,8 +16,9 @@
 
 ## Python
 ![Python application](https://github.com/n1kk0/katas/workflows/Python%20application/badge.svg)
+![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/python/coverage.svg?sanitize=true)
 
-`cd python && python -m coverage run -m unittest discover`
+`cd python && pip install -r requirements.txt  && python -m coverage run -m unittest discover`
 
 ## PHP
 ![PHP Composer](https://github.com/n1kk0/katas/workflows/PHP%20Composer/badge.svg)

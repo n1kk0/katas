@@ -20,8 +20,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Change PHP Coverage Badge"
+        echo `git add -A && git commit -m "Change PHP Coverage Badge"`
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:

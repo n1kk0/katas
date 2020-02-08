@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHP
 
 on: [push]
 
@@ -14,4 +14,15 @@ jobs:
       run: |
         cd php
         composer install
-        vendor/bin/phpunit tests --coverage-text
+        vendor/bin/phpunit tests --coverage-clover coverage.xml
+        vendor/bin/php-coverage-badger coverage.xml coverage.svg
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Change PHP Coverage Badge"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}

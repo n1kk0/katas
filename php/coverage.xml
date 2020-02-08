@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1581171750">
+  <project timestamp="1581171750">
+    <file name="/home/runner/work/katas/katas/php/src/breakChocolate.php">
+      <line num="3" type="stmt" count="1"/>
+      <metrics loc="4" ncloc="4" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
+    </file>
+    <file name="/home/runner/work/katas/katas/php/src/createPhoneNumber.php">
+      <line num="3" type="stmt" count="1"/>
+      <metrics loc="4" ncloc="4" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
+    </file>
+    <metrics files="2" loc="8" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="2" coveredelements="2"/>
+  </project>
+</coverage>

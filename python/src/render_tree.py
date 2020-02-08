@@ -20,13 +20,18 @@ class MyTree(dict):
                 subDict[pathItem] = {}
                 subDict = subDict[pathItem]
 
-    def deepSortDict(self, subDict = None):
+    def deepSortDict(self, subDict=None):
         if subDict is None:
             subDict = self
 
-        return {key: self.deepSortDict(value) if isinstance(value, dict) else value for key, value in sorted(subDict.items())}
+        return {
+            key: self.deepSortDict(value)
+            if isinstance(value, dict)
+            else value
+            for key, value in sorted(subDict.items())
+        }
 
-    def toString(self, subDict = None, depth = 0):
+    def toString(self, subDict=None, depth=0):
         out = ""
         nextDepth = depth + 1
 
@@ -40,6 +45,7 @@ class MyTree(dict):
                 out += self.toString(subDict.get(key), nextDepth)
 
         return out
+
 
 def render_tree(paths):
     return MyTree().addPaths(paths).toString()

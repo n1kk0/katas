@@ -2,6 +2,7 @@ import unittest
 
 from src.render_tree import render_tree
 
+
 class TestRenderTree(unittest.TestCase):
     def test_render(self):
         self.assertEqual(render_tree([
@@ -44,6 +45,7 @@ home
 ''')
 
         self.assertEqual(render_tree([]), "")
+
 
 if __name__ == '__main__':
     unittest.main()

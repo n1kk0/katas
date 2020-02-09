@@ -6,7 +6,7 @@ def in_array(array1, array2):
 
     for pattern in array1:
         for model in array2:
-            if not pattern in results:
+            if pattern not in results:
                 if model.find(pattern) != -1:
                     results.append(pattern)
 

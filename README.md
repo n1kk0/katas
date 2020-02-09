@@ -1,7 +1,8 @@
 # katas
 
+[Code Wars](http://codewars.com)
+
 ![Code Wars](https://www.codewars.com/users/n1kk0/badges/small)
-![Code Wars](http://codewars.com)
 
 ## Dart
 ![Dart](https://github.com/n1kk0/katas/workflows/Dart/badge.svg)

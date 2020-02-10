@@ -24,7 +24,7 @@ String brainLuck(String code, String input) {
         break;
       case ']':
         if (tape[tapePointer] != 0) {
-          instructionPointer = bracketsRelations.keys.firstWhere((k) => bracketsRelations[k] == instructionPointer);
+          instructionPointer = bracketsRelations.keys.firstWhere((k) => bracketsRelations[k] == instructionPointer) - 1;
         }
 
         break;

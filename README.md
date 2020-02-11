@@ -32,6 +32,7 @@ npm run test
 ```
 cd python
 pip install -r requirements.txt
+brew install numpy
 python -m coverage run -m unittest discover
 ```
 

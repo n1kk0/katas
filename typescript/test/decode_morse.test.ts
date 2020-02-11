@@ -2,7 +2,6 @@ import { decodeMorse } from '../src/decode_morse';
 import { assert } from 'chai';
 import 'mocha';
 
-
 describe("decodeMorse", function() {
     it('HEY JUDE', () => assert.equal(decodeMorse('.... . -.--   .--- ..- -.. .'), "HEY JUDE"));
     it('SOS', () => assert.equal(decodeMorse('...---...'), "SOS"));

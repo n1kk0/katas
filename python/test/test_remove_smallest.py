@@ -45,7 +45,7 @@ class TestRemoveSmallest(unittest.TestCase):
             )
 
     def randlist(self):
-        return list(randint(400, size = randint(1, 10)))
+        return list(randint(400, size=randint(1, 10)))
 
 
 if __name__ == '__main__':

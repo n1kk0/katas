@@ -12,6 +12,3 @@ describe("countBits", function() {
     assert.equal(countBits(10), 2, "10");
   });
 });
-
-
-111

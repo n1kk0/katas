@@ -7,7 +7,7 @@ String longestConsec(strarr, k) {
       outputStrings.add(strarr.getRange(i, strarr.length).take(k).join(''));
     }
 
-    output = outputStrings.fold("", (previousValue, element) => element.length > previousValue.length ? element : previousValue);
+    output = outputStrings.fold('', (previousValue, element) => element.length > previousValue.length ? element : previousValue);
   } 
 
   return output;

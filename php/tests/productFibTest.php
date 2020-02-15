@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require __DIR__ . "/../src/ProductFib.php";
+require __DIR__ . "/../src/productFib.php";
 
 class FibProductTestCases extends TestCase {
     private function revTest($actual, $expected) {

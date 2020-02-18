@@ -41,10 +41,10 @@ final class IsSolvedTest extends TestCase {
       [2, 1, 2]
     ]), 'no one wins -> 0');
 
-    $this->assertEquals(0, is_solved([
+    $this->assertEquals(-1, is_solved([
       [0, 0, 2],
       [0, 0, 0],
       [1, 0, 1]
-    ]), 'no one wins -> 0');
+    ]), 'no one wins with zeroes -> -1');
   }
 }

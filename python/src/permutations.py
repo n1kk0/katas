@@ -1,5 +1,6 @@
 from itertools import permutations as pm
-import numpy as np 
+import numpy as np
+
 
 def permutations(string):
     '''

@@ -15,8 +15,8 @@ def valid_solution(board):
                 if ''.join([
                     str(x) for x in sorted([
                         board[k][l]
-                            for l in list(range(j * 3, (j * 3) + 3))
-                            for k in list(range(i - 1, i + 2))
+                        for l in list(range(j * 3, (j * 3) + 3))
+                        for k in list(range(i - 1, i + 2))
                     ])
                 ]) != '123456789':
                     return False

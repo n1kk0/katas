@@ -6,7 +6,7 @@ from src.sudoku_validator import valid_solution
 class TestSudokuValidator(unittest.TestCase):
     def test_valid_solution(self):
         self.assertEqual(valid_solution([
-            [5, 3, 4, 6, 7, 8, 9, 1, 2], 
+            [5, 3, 4, 6, 7, 8, 9, 1, 2],
             [6, 7, 2, 1, 9, 5, 3, 4, 8],
             [1, 9, 8, 3, 4, 2, 5, 6, 7],
             [8, 5, 9, 7, 6, 1, 4, 2, 3],
@@ -18,7 +18,7 @@ class TestSudokuValidator(unittest.TestCase):
         ]), True)
 
         self.assertEqual(valid_solution([
-            [5, 3, 4, 6, 7, 8, 9, 1, 2], 
+            [5, 3, 4, 6, 7, 8, 9, 1, 2],
             [6, 7, 2, 1, 9, 0, 3, 4, 9],
             [1, 0, 0, 3, 4, 2, 5, 6, 0],
             [8, 5, 9, 7, 6, 1, 0, 2, 0],

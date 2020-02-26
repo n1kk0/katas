@@ -21,7 +21,8 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        echo `git add -A && git commit -m "Change Dart Coverage Badge" && git pull --rebase`
+        echo `git add -A && git commit -m "Change Dart Coverage Badge"`
+        git pull --rebase
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:

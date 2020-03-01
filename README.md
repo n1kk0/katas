@@ -4,6 +4,8 @@
 
 ![Code Wars](https://www.codewars.com/users/n1kk0/badges/small)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/87969e1c4438c4ffb09c/maintainability)](https://codeclimate.com/github/n1kk0/katas/maintainability)
+
 ## Dart
 ![Dart](https://github.com/n1kk0/katas/workflows/Dart/badge.svg)
 ![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/dart/coverage_badge.svg?sanitize=true)

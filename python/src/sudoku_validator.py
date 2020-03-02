@@ -8,8 +8,9 @@ def check_sub_squares(board, i):
             ])
         ]) != '123456789':
             return False
-    
+
     return True
+
 
 def valid_solution(board):
     for i in list(range(1, 10)):

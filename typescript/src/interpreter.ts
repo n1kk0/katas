@@ -4,20 +4,9 @@ interface BracketRelation {
 }
 
 export function interpreter(code: string, tape: string): string {
-    let bracketsStack: number[] = [];
-    let bracketsRelations: BracketRelation[] = [];
     var tapePointer = 0;
   
-    for (var i = 0; i < code.length; i++) {
-        if (code[i] == '[') {
-            bracketsStack.push(i);
-        } else if (code[i] == ']') {
-            bracketsRelations.push({
-                open: bracketsStack.pop() || 0,
-                close: i
-            });
-        }
-    }
+    const bracketsRelations = parseBrackets(code);
 
     for(var i = 0; i < code.length; i++) {
         switch (code[i]) {
@@ -58,4 +47,22 @@ export function interpreter(code: string, tape: string): string {
     }
 
     return tape;
+}
+
+function parseBrackets(code: string): BracketRelation[] {
+    let bracketsStack: number[] = [];
+    let bracketsRelations: BracketRelation[] = [];
+  
+    for (var i = 0; i < code.length; i++) {
+        if (code[i] == '[') {
+            bracketsStack.push(i);
+        } else if (code[i] == ']') {
+            bracketsRelations.push({
+                open: bracketsStack.pop() || 0,
+                close: i
+            });
+        }
+    }
+
+    return bracketsRelations;
 }

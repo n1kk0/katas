@@ -23,7 +23,7 @@ def valid_solution(board):
         ]) != '123456789':
             return False
 
-        if i % 3 == 1 and check_sub_squares(board, i) == False:
+        if i % 3 == 1 and not check_sub_squares(board, i):
             return False
 
     return True

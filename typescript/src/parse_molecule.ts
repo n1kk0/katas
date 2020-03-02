@@ -1,51 +1,20 @@
 export function parseMolecule(formula: string) {
-    let formulaItems: string[] = [];
+    const formulaItems: string[] = [];
 
-    for (var i = 0; i < formula.length; i++) {
-        let extract = /^(([\(\[\{}])|([A-Z][a-z]?)|([\)\]\}])|([0-9]+))/
+    for (let i = 0; i < formula.length; i++) {
+        const extract = /^(([\(\[\{}])|([A-Z][a-z]?)|([\)\]\}])|([0-9]+))/
             .exec(formula.slice(i, formula.length));
 
         if (extract && extract.length > 0) {
-            formulaItems.push(
-                ['(', '[', '{'].indexOf(extract[0]) > -1 ?
-                    '(' :
-                    (
-                        [')', ']', '}'].indexOf(extract[0]) > -1 ?
-                            ')' :
-                            extract[0]
-                    )
-            );
+            formulaItems.push(convertBrace(extract[0]));
         }
     }
 
     return parseTokenizedMolecule(formulaItems, 1);
 }
 
-function findMatchingBrace(tokens: string[]) : number {
-    let braceId = 1;
-    let id = 0;
-
-    for (const i in tokens) {
-        if (tokens[i] == '(') {
-            braceId++;
-        }
-
-        if (tokens[i] == ')') {
-            braceId--;
-        }
-
-        if (braceId == 0) {
-            return id;
-        }
-
-        id++;
-    }
-
-    return 0;
-}
-
 function parseTokenizedMolecule(tokens: string[], coef: number) {
-    let output: {[key: string]: number} = {};
+    const output: {[key: string]: number} = {};
 
     while (tokens.indexOf('(') > -1) {
         const openingBraceId = tokens.indexOf('(');
@@ -84,4 +53,38 @@ function parseTokenizedMolecule(tokens: string[], coef: number) {
     }
 
     return output;
+}
+
+function convertBrace(value: string) {
+    return ['(', '[', '{'].indexOf(value) > -1 ?
+        '(' :
+        (
+            [')', ']', '}'].indexOf(value) > -1 ?
+                ')' :
+                value
+        )
+    ;
+}
+
+function findMatchingBrace(tokens: string[]) : number {
+    let braceId = 1;
+    let id = 0;
+
+    for (const i in tokens) {
+        if (tokens[i] == '(') {
+            braceId++;
+        }
+
+        if (tokens[i] == ')') {
+            braceId--;
+        }
+
+        if (braceId == 0) {
+            return id;
+        }
+
+        id++;
+    }
+
+    return 0;
 }

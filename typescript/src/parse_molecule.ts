@@ -14,7 +14,7 @@ export function parseMolecule(formula: string) {
 }
 
 function parseTokenizedMolecule(tokens: string[], coef: number) {
-    const output: {[key: string]: number} = {};
+    let output: {[key: string]: number} = {};
 
     while (tokens.indexOf('(') > -1) {
         const openingBraceId = tokens.indexOf('(');
@@ -35,14 +35,17 @@ function parseTokenizedMolecule(tokens: string[], coef: number) {
             closingBraceId - openingBraceId + (nextIsNumber ? 2 : 1)
         );
 
-        for (const atom in outputTmp) {
-            output[atom] =
-                (output[atom] ? output[atom] : 0) +
-                (outputTmp[atom] * coef)
-            ;
-        }
+        output = mergeParts(output, outputTmp, coef);
     }
 
+    return addParseAtoms(output, tokens, coef);
+}
+
+function addParseAtoms(
+    output: {[key: string]: number},
+    tokens: string[],
+    coef: number
+) {
     for (let id = 0; id < tokens.length; id++) {
         if (isNaN(+tokens[id])) {
             output[tokens[id]] =
@@ -53,6 +56,21 @@ function parseTokenizedMolecule(tokens: string[], coef: number) {
     }
 
     return output;
+}
+
+function mergeParts(
+    outputOut: {[key: string]: number},
+    outputIn: {[key: string]: number},
+    coef: number
+) {
+    for (const atom in outputIn) {
+        outputOut[atom] =
+            (outputOut[atom] ? outputOut[atom] : 0) +
+            (outputIn[atom] * coef)
+        ;
+    }
+
+    return outputOut;
 }
 
 function convertBrace(value: string) {

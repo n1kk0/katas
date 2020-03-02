@@ -11,8 +11,7 @@ export function interpreter(code: string, tape: string): string {
         if (code[codeStep] == '*') {
             tape = tape.substr(0, tapePointer) +
                 (tape[tapePointer] == "0" ? "1" : "0") +
-                tape.substr(tapePointer + 1)
-            ;
+                tape.substr(tapePointer + 1);
         }
 
         if (code[codeStep] == '>') {
@@ -24,11 +23,11 @@ export function interpreter(code: string, tape: string): string {
         }
 
         if (code[codeStep] == '[' && tape[tapePointer] == "0") {
-            codeStep = getClosingBrace(bracketsRelations, codeStep);
+            codeStep = getOtherBrace(bracketsRelations, codeStep, false);
         }
 
         if (code[codeStep] == ']' && tape[tapePointer] == "1") {
-            codeStep = getOpeningBrace(bracketsRelations, codeStep);
+            codeStep = getOtherBrace(bracketsRelations, codeStep, true);
         }
 
         if (tapePointer < 0 || tapePointer >= tape.length) {
@@ -39,22 +38,17 @@ export function interpreter(code: string, tape: string): string {
     return tape;
 }
 
-function getOpeningBrace(
+function getOtherBrace(
     bracketsRelations: BracketRelation[],
-    codeStep: number
+    codeStep: number,
+    direction: boolean
 ) {
-    let bracket = bracketsRelations.find((v) => v.close == codeStep);
+    let bracket = bracketsRelations.find(
+        (v) => (direction ? v.close : v.open) == codeStep
+    );
 
-    return bracket == undefined ? 0 : bracket.open;
-}
-
-function getClosingBrace(
-    bracketsRelations: BracketRelation[],
-    codeStep: number
-) {
-    let bracket = bracketsRelations.find((v) => v.open == codeStep);
-
-    return bracket == undefined ? 0 : bracket.close;
+    return bracket == undefined ? 0 :
+        (direction ? bracket.open : bracket.close);
 }
 
 function parseBrackets(code: string): BracketRelation[] {

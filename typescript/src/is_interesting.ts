@@ -2,11 +2,7 @@ export function isInteresting(n: number, awesomePhrases: number[]): number {
   var returnValue = 0;
 
   for (var i = 2; i >= 0; i--) {
-    if (testItem(n + i)) {
-      returnValue = i > 0 ? 1 : 2;
-    }
-
-    if (awesomePhrases.includes(n + i)) {
+    if (testItem(n + i, awesomePhrases)) {
       returnValue = i > 0 ? 1 : 2;
     }
   }
@@ -14,13 +10,18 @@ export function isInteresting(n: number, awesomePhrases: number[]): number {
   return returnValue;
 }
 
-function testItem(n: number) {
+function testItem(n: number, phrases: number[]) {
   return isMultipleOf100(n) ||
     hasSameItems(n) ||
     hasAscendingItems(n) ||
     hasDescendingItems(n) ||
-    hasPalidrome(n)
+    hasPalidrome(n) ||
+    isInPhrases(n, phrases)
   ;
+}
+
+function isInPhrases(n: number, phrases: number[]) {
+  return phrases.includes(n);
 }
 
 function isMultipleOf100(n: number) {

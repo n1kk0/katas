@@ -13,7 +13,7 @@ jobs:
       run: |
         cd dart
         pub get
-        pub run test --coverage=coverage --file-reporter=compact:coverage/tests.output
+        pub run test --coverage=coverage --file-reporter=compact:tests.output
         pub run test_coverage
     - name: Commit files
       run: |
@@ -29,11 +29,12 @@ jobs:
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
       run: sonar-scanner
+          -Dsonar.projectBaseDir=dart
           -Dsonar.login=306e2f3ca2900db52fbd87dbb771ad1ef559450b
           -Dsonar.host.url=https://sonar.techmeup.io
           -Dsonar.projectKey=dart_katas
-          -Dsonar.sources=dart/lib
-          -Dsonar.tests=dart/test
+          -Dsonar.sources=lib
+          -Dsonar.tests=test
           -Dsonar.projectVersion=1.0
           -Dsonar.sourceEncoding=UTF-8
-          -Dsonar.testExecutionReportPaths=dart/coverage
+          -Dsonar.testExecutionReportPaths=coverage

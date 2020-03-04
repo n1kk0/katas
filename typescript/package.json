@@ -6,7 +6,7 @@
   "license": "ISC",
   "main": "app.js",
   "scripts": {
-    "test": "tsc && nyc --reporter=clover mocha --require ts-node/register --require source-map-support/register --recursive test/**/*.test.ts && coverage-badger -r coverage/clover.xml -d ./",
+    "test": "tsc && nyc --reporter=clover --reporter=lcov mocha --require ts-node/register --require source-map-support/register --recursive test/**/*.test.ts && coverage-badger -r coverage/clover.xml -d ./",
     "watch": "onchange 'src/**/*.ts' -- npm run test"
   },
   "devDependencies": {

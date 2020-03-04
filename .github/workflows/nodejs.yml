@@ -40,4 +40,4 @@ jobs:
           -Dsonar.sources=typescript/src
           -Dsonar.projectVersion=1.0
           -Dsonar.sourceEncoding=UTF-8
-          -Dsonar.php.coverage.reportPaths=typescript/coverage/clover.xml
+          -Dsonar.javascript.lcov.reportPaths=typescript/coverage/clover.xml

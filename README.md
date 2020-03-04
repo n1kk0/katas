@@ -21,6 +21,11 @@ pub run test_coverage
 ![TypeScript](https://github.com/n1kk0/katas/workflows/TypeScript/badge.svg)
 ![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/typescript/coverage.svg?sanitize=true)
 
+[![Quality Gate Status](https://sonar.techmeup.io/api/project_badges/measure?project=typescript_katas&metric=alert_status)](https://sonar.techmeup.io/dashboard?id=typescript_katas)
+[![Code Smells](https://sonar.techmeup.io/api/project_badges/measure?project=typescript_katas&metric=code_smells)](https://sonar.techmeup.io/dashboard?id=typescript_katas)
+[![Maintainability Rating](https://sonar.techmeup.io/api/project_badges/measure?project=typescript_katas&metric=sqale_rating)](https://sonar.techmeup.io/dashboard?id=typescript_katas)
+[![Technical Debt](https://sonar.techmeup.io/api/project_badges/measure?project=typescript_katas&metric=sqale_index)](https://sonar.techmeup.io/dashboard?id=typescript_katas)
+
 ```
 cd typescript
 npm install
@@ -30,6 +35,11 @@ npm run test
 ## Python
 ![Python](https://github.com/n1kk0/katas/workflows/Python/badge.svg)
 ![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/python/coverage.svg?sanitize=true)
+
+[![Quality Gate Status](https://sonar.techmeup.io/api/project_badges/measure?project=python_katas&metric=alert_status)](https://sonar.techmeup.io/dashboard?id=python_katas)
+[![Code Smells](https://sonar.techmeup.io/api/project_badges/measure?project=python_katas&metric=code_smells)](https://sonar.techmeup.io/dashboard?id=python_katas)
+[![Maintainability Rating](https://sonar.techmeup.io/api/project_badges/measure?project=python_katas&metric=sqale_rating)](https://sonar.techmeup.io/dashboard?id=python_katas)
+[![Technical Debt](https://sonar.techmeup.io/api/project_badges/measure?project=python_katas&metric=sqale_index)](https://sonar.techmeup.io/dashboard?id=python_katas)
 
 ```
 cd python
@@ -41,6 +51,11 @@ python -m coverage run -m unittest discover
 ## PHP
 ![PHP](https://github.com/n1kk0/katas/workflows/PHP/badge.svg)
 ![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/php/coverage.svg?sanitize=true)
+
+[![Quality Gate Status](https://sonar.techmeup.io/api/project_badges/measure?project=php_katas&metric=alert_status)](https://sonar.techmeup.io/dashboard?id=php_katas)
+[![Code Smells](https://sonar.techmeup.io/api/project_badges/measure?project=php_katas&metric=code_smells)](https://sonar.techmeup.io/dashboard?id=php_katas)
+[![Maintainability Rating](https://sonar.techmeup.io/api/project_badges/measure?project=php_katas&metric=sqale_rating)](https://sonar.techmeup.io/dashboard?id=php_katas)
+[![Technical Debt](https://sonar.techmeup.io/api/project_badges/measure?project=php_katas&metric=sqale_index)](https://sonar.techmeup.io/dashboard?id=php_katas)
 
 ```
 cd php

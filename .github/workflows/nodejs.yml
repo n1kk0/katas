@@ -30,3 +30,14 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Setup sonarqube
+      uses: warchant/setup-sonar-scanner@v1
+    - name: Run sonarqube
+      run: sonar-scanner
+          -Dsonar.login=543e7e2282f3234946db8c410b6a1870e37a817c
+          -Dsonar.host.url=https://sonar.techmeup.io
+          -Dsonar.projectKey=typescript_katas
+          -Dsonar.sources=typescript/src
+          -Dsonar.projectVersion=1.0
+          -Dsonar.sourceEncoding=UTF-8
+          -Dsonar.php.coverage.reportPaths=typescript/coverage/clover.xml

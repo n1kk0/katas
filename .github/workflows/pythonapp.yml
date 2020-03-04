@@ -26,6 +26,7 @@ jobs:
         cd python
         coverage run -m unittest discover -v
         coverage report -m
+        coverage xml
         rm coverage.svg
         coverage-badge -o coverage.svg
     - name: Commit files
@@ -45,4 +46,8 @@ jobs:
           -Dsonar.login=3f5f2ea453490899d2a512389f40329906a908b4
           -Dsonar.host.url=https://sonar.techmeup.io
           -Dsonar.projectKey=python_katas
-          -Dsonar.sources=. \
+          -Dsonar.sources=python/src
+          -Dsonar.projectVersion=1.0
+          -Dsonar.sourceEncoding=UTF-8
+          -Dsonar.scm.provider=git
+          -Dsonar.python.coverage.reportPaths=python/coverage.xml

@@ -41,8 +41,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Run sonarqube
       run: sonar-scanner
           -Dsonar.login=3f5f2ea453490899d2a512389f40329906a908b4

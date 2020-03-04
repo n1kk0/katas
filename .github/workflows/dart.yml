@@ -27,6 +27,11 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube

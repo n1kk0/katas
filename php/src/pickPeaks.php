@@ -11,7 +11,7 @@ function pickPeaks(array $arr) {
     $results = ['pos' => [], 'peaks' => []];
 
     for($i = 1; $i < count($arr); $i++) {
-        $currentVector = $arr[$i] > $arr[$i - 1] ? Vector::UP : ($arr[$i] < $arr[$i - 1] ? Vector::DOWN : Vector::PLATEAU);
+        $currentVector = getVector($arr, $i);
 
         if ($currentVector < $lastVector && $lastVector == Vector::UP) {
             $firstOfPlateau = $i - 1;
@@ -27,4 +27,14 @@ function pickPeaks(array $arr) {
     }
 
     return $results;
+}
+
+function getVector(array $arr, $i) {
+    if ($arr[$i] > $arr[$i -1]) {
+        return Vector::UP;
+    } elseif ($arr[$i] < $arr[$i - 1]) {
+        return Vector::DOWN;
+    } else {
+        return Vector::PLATEAU;
+    }
 }

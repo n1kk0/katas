@@ -1,22 +1,24 @@
 <?php
+define('LABEL', 'label');
+define('SECONDS', 'seconds');
 
 function format_duration($seconds) {
     $formatSteps = [
-        ['label' => 'year', 'seconds' => 31536000],
-        ['label' => 'day', 'seconds' => 86400],
-        ['label' => 'hour', 'seconds' => 3600],
-        ['label' => 'minute', 'seconds' => 60],
-        ['label' => 'second', 'seconds' => 1],
+        [LABEL => 'year', SECONDS => 31536000],
+        [LABEL => 'day', SECONDS => 86400],
+        [LABEL => 'hour', SECONDS => 3600],
+        [LABEL => 'minute', SECONDS => 60],
+        [LABEL => 'second', SECONDS => 1],
     ];
 
     $outputArray = [];
 
     foreach ($formatSteps as $index => $step) {
-        $value = floor($seconds / $step['seconds']);
+        $value = floor($seconds / $step[SECONDS]);
 
         if ($value != 0) {
-            $outputArray[$index] = $value . ' ' . $step['label'] . ($value > 1 ? 's' : '');
-            $seconds -= $step['seconds'] * $value;
+            $outputArray[$index] = $value . ' ' . $step[LABEL] . ($value > 1 ? 's' : '');
+            $seconds -= $step[SECONDS] * $value;
         }
     }
 
@@ -25,9 +27,19 @@ function format_duration($seconds) {
     krsort($outputArray);
 
     foreach ($outputArray as $outputStep) {
-        $output = $outputStep . ($stepIndex == 1 ? ' and ' : ($stepIndex > 0 ? ', ' : '')) . $output;
+        $output = $outputStep . getGlue($stepIndex) . $output;
         $stepIndex++;
     }
 
     return $output == '' ? 'now' : $output;
+}
+
+function  getGlue($stepIndex) {
+    if ($stepIndex == 1) {
+        return ' and ';
+    } elseif ($stepIndex > 0) {
+        return ', ';
+    } else {
+        return '';
+    }
 }

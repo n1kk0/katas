@@ -25,7 +25,17 @@ function is_solved(array $board): int {
         }
     }
 
-    return $winner == 0 ? ($hasZeroes ? -1 : 0) : $winner;
+    return getReturnValue($winner, $hasZeroes);
+}
+
+function getReturnValue($winner, $hasZeroes) {
+    if ($winner != 0) {
+        return $winner;
+    } elseif ($hasZeroes) {
+        return -1;
+    } else {
+        return 0;
+    }
 }
 
 function hasWinningRow(array $board, $i) {

@@ -50,7 +50,7 @@ function addParseAtoms(
         if (isNaN(+tokens[id])) {
             output[tokens[id]] =
                 (output[tokens[id]] ? output[tokens[id]] : 0) +
-                ((isNaN(+tokens[id + 1]) ? 1 : +tokens[id + 1])) * coef
+                (isNaN(+tokens[id + 1]) ? 1 : +tokens[id + 1]) * coef
             ;
         }
     }

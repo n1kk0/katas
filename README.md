@@ -5,6 +5,12 @@
 ![Dart](https://github.com/n1kk0/katas/workflows/Dart/badge.svg)
 ![Coverage](https://raw.githubusercontent.com/n1kk0/katas/master/dart/coverage_badge.svg?sanitize=true)
 
+
+[![Quality Gate Status](https://sonar.techmeup.io/api/project_badges/measure?project=dart_katas&metric=alert_status)](https://sonar.techmeup.io/dashboard?id=dart_katas)
+[![Code Smells](https://sonar.techmeup.io/api/project_badges/measure?project=dart_katas&metric=code_smells)](https://sonar.techmeup.io/dashboard?id=dart_katas)
+[![Maintainability Rating](https://sonar.techmeup.io/api/project_badges/measure?project=dart_katas&metric=sqale_rating)](https://sonar.techmeup.io/dashboard?id=dart_katas)
+[![Technical Debt](https://sonar.techmeup.io/api/project_badges/measure?project=dart_katas&metric=sqale_index)](https://sonar.techmeup.io/dashboard?id=dart_katas)
+
 ```
 cd dart
 pub get

@@ -14,7 +14,7 @@ jobs:
         cd dart
         `DART_VM_OPTIONS=-DSILENT_OBSERVATORY=true`
         pub get
-        pub run test --coverage=coverage --file-reporter=compact:coverage/tests.output
+        pub run test --coverage=coverage --file-reporter=expanded:coverage/tests.output
         pub run test_coverage
     - name: Commit files
       run: |

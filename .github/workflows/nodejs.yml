@@ -34,7 +34,7 @@ jobs:
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
       run: sonar-scanner
-          -Dsonar.login=543e7e2282f3234946db8c410b6a1870e37a817c
+          -Dsonar.login=3c9cdc2dbf0f0184465d7691875acd946d2ac5a4
           -Dsonar.host.url=https://sonar.techmeup.io
           -Dsonar.projectKey=typescript_katas
           -Dsonar.sources=typescript/src

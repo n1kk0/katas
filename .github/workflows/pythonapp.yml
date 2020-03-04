@@ -49,5 +49,4 @@ jobs:
           -Dsonar.sources=python/src
           -Dsonar.projectVersion=1.0
           -Dsonar.sourceEncoding=UTF-8
-          -Dsonar.scm.provider=git
           -Dsonar.python.coverage.reportPaths=python/coverage.xml

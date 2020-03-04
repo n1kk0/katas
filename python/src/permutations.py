@@ -9,7 +9,7 @@ def permutations(string):
     '''
     output = []
 
-    for permutationLetters in pm(string):
-        output.append("".join(permutationLetters))
+    for permutation_letters in pm(string):
+        output.append("".join(permutation_letters))
 
     return np.unique(np.array(output))

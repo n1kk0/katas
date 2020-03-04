@@ -6,43 +6,43 @@ class MyTree(dict):
         return self
 
     def addPath(self, path):
-        pathItems = path.split("/")
+        path_items = path.split("/")
 
         if path[0] == "/":
-            pathItems.pop(0)
+            path_items.pop(0)
 
-        subDict = self
+        sub_dict = self
 
-        for pathItem in pathItems:
+        for path_item in path_items:
             try:
-                subDict = subDict[pathItem]
+                sub_dict = sub_dict[path_item]
             except KeyError:
-                subDict[pathItem] = {}
-                subDict = subDict[pathItem]
+                sub_dict[path_item] = {}
+                sub_dict = sub_dict[path_item]
 
-    def deepSortDict(self, subDict=None):
-        if subDict is None:
-            subDict = self
+    def deepSortDict(self, sub_dict=None):
+        if sub_dict is None:
+            sub_dict = self
 
         return {
             key: self.deepSortDict(value)
             if isinstance(value, dict)
             else value
-            for key, value in sorted(subDict.items())
+            for key, value in sorted(sub_dict.items())
         }
 
-    def toString(self, subDict=None, depth=0):
+    def toString(self, sub_dict=None, depth=0):
         out = ""
-        nextDepth = depth + 1
+        next_depth = depth + 1
 
-        if subDict is None:
-            subDict = self.deepSortDict()
+        if sub_dict is None:
+            sub_dict = self.deepSortDict()
 
-        for key in subDict:
+        for key in sub_dict:
             out += ("    " * depth) + key + "\n"
 
-            if len(subDict.get(key)) != 0:
-                out += self.toString(subDict.get(key), nextDepth)
+            if len(sub_dict.get(key)) != 0:
+                out += self.toString(sub_dict.get(key), next_depth)
 
         return out
 

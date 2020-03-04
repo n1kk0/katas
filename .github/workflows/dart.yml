@@ -13,7 +13,7 @@ jobs:
       run: |
         cd dart
         pub get
-        pub run test
+        pub run test --coverage=coverage --file-reporter=compact:coverage/tests.output
         pub run test_coverage
     - name: Commit files
       run: |
@@ -36,3 +36,4 @@ jobs:
           -Dsonar.tests=dart/test
           -Dsonar.projectVersion=1.0
           -Dsonar.sourceEncoding=UTF-8
+          -Dsonar.testExecutionReportPaths=dart/coverage

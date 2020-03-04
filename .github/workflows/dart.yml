@@ -12,9 +12,9 @@ jobs:
     - name: Run tests
       run: |
         cd dart
-        pub get
         `DART_VM_OPTIONS=-DSILENT_OBSERVATORY=true`
-        pub run test --coverage=coverage --file-reporter=compact:../tests.output
+        pub get
+        pub run test --coverage=coverage --file-reporter=compact:coverage/tests.output
         pub run test_coverage
     - name: Commit files
       run: |
@@ -37,4 +37,5 @@ jobs:
           -Dsonar.tests=dart/test
           -Dsonar.projectVersion=1.0
           -Dsonar.sourceEncoding=UTF-8
-          -Dsonar.testExecutionReportPaths=dart/coverage
+          -Dsonar.flutter.tests.reportPath=dart/coverage/tests.output
+          -Dsonar.flutter.coverage.reportPath=dart/coverage/lcov.info

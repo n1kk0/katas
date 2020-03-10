@@ -2,6 +2,7 @@ import unittest
 
 from src.pagination_helper import PaginationHelper
 
+
 class TestPaginationHelper(unittest.TestCase):
     def test_paginaiton_helper(self):
         collection = range(1,25)

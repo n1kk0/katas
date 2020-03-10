@@ -17,7 +17,7 @@ class PaginationHelper:
 
         if page_index + 1 == self.page_count():
             return len(self.collection) % self.items_per_page
-        
+
         return self.items_per_page
 
     def page_index(self, item_index):

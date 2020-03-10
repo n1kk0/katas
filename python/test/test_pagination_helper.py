@@ -21,9 +21,27 @@ class TestPaginationHelper(unittest.TestCase):
         )
 
         self.assertEqual(
+            helper.page_index(40),
+            -1,
+            'page_index out of range should return -1'
+        )
+
+        self.assertEqual(
             helper.item_count(),
             24,
             'item_count returned incorrect value'
+        )
+
+        self.assertEqual(
+            helper.page_item_count(2),
+            4,
+            'page_item_count returned incorrect value'
+        )
+
+        self.assertEqual(
+            helper.page_item_count(10),
+            -1,
+            'page_item_count out of range should return -1'
         )
 
 

@@ -1,5 +1,6 @@
 import math
 
+
 class PaginationHelper:
     def __init__(self, collection, items_per_page):
         self.collection = collection

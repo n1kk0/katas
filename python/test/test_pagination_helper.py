@@ -5,7 +5,7 @@ from src.pagination_helper import PaginationHelper
 
 class TestPaginationHelper(unittest.TestCase):
     def test_paginaiton_helper(self):
-        collection = range(1,25)
+        collection = range(1, 25)
         helper = PaginationHelper(collection, 10)
 
         self.assertEqual(

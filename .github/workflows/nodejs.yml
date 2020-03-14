@@ -12,6 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: |
+        git fetch --unshallow
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -33,11 +35,12 @@ jobs:
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
-      run: sonar-scanner
-          -Dsonar.login=3c9cdc2dbf0f0184465d7691875acd946d2ac5a4
-          -Dsonar.host.url=https://sonar.techmeup.io
-          -Dsonar.projectKey=typescript_katas
-          -Dsonar.sources=typescript/src
-          -Dsonar.projectVersion=1.0
-          -Dsonar.sourceEncoding=UTF-8
-          -Dsonar.javascript.lcov.reportPaths=typescript/coverage/lcov.info
+      run: |
+        sonar-scanner
+        -Dsonar.login=3c9cdc2dbf0f0184465d7691875acd946d2ac5a4
+        -Dsonar.host.url=https://sonar.techmeup.io
+        -Dsonar.projectKey=typescript_katas
+        -Dsonar.sources=typescript/src
+        -Dsonar.projectVersion=1.0
+        -Dsonar.sourceEncoding=UTF-8
+        -Dsonar.javascript.lcov.reportPaths=typescript/coverage/lcov.info

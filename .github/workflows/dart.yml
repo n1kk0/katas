@@ -31,14 +31,13 @@ jobs:
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
-      run: |
-        sonar-scanner
-        -Dsonar.login=306e2f3ca2900db52fbd87dbb771ad1ef559450b
-        -Dsonar.host.url=https://sonar.techmeup.io
-        -Dsonar.projectKey=dart_katas
-        -Dsonar.sources=dart/lib
-        -Dsonar.tests=dart/test
-        -Dsonar.projectVersion=1.0
-        -Dsonar.sourceEncoding=UTF-8
-        -Dsonar.flutter.tests.reportPath=dart/coverage/tests.output
-        -Dsonar.flutter.coverage.reportPath=dart/coverage/lcov.info
+      run: sonar-scanner
+          -Dsonar.login=306e2f3ca2900db52fbd87dbb771ad1ef559450b
+          -Dsonar.host.url=https://sonar.techmeup.io
+          -Dsonar.projectKey=dart_katas
+          -Dsonar.sources=dart/lib
+          -Dsonar.tests=dart/test
+          -Dsonar.projectVersion=1.0
+          -Dsonar.sourceEncoding=UTF-8
+          -Dsonar.flutter.tests.reportPath=dart/coverage/tests.output
+          -Dsonar.flutter.coverage.reportPath=dart/coverage/lcov.info

@@ -29,12 +29,11 @@ jobs:
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
-      run: |
-        sonar-scanner
-        -Dsonar.login=0af39eab949ef590ea4ba17345c9c0cb8c60f6af
-        -Dsonar.host.url=https://sonar.techmeup.io
-        -Dsonar.projectKey=php_katas
-        -Dsonar.sources=php/src
-        -Dsonar.projectVersion=1.0
-        -Dsonar.sourceEncoding=UTF-8
-        -Dsonar.php.coverage.reportPaths=php/coverage.xml
+      run: sonar-scanner
+          -Dsonar.login=0af39eab949ef590ea4ba17345c9c0cb8c60f6af
+          -Dsonar.host.url=https://sonar.techmeup.io
+          -Dsonar.projectKey=php_katas
+          -Dsonar.sources=php/src
+          -Dsonar.projectVersion=1.0
+          -Dsonar.sourceEncoding=UTF-8
+          -Dsonar.php.coverage.reportPaths=php/coverage.xml

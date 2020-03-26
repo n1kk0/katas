@@ -8,7 +8,7 @@ export function josephusSurvivor(n: number, k: number): number {
     while (members.length > 1) {
         currentIndex += k;
         currentIndex = currentIndex % members.length;
-        currentIndex = currentIndex == 0 ? members.length : currentIndex;
+        currentIndex = currentIndex === 0 ? members.length : currentIndex;
         members.splice(currentIndex - 1, 1);
         currentIndex--;
     }

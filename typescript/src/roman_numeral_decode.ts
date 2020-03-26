@@ -1,5 +1,5 @@
-let twoLettersValues = new Map<string, number>();
-let oneLetterValues = new Map<string, number>();
+const twoLettersValues = new Map<string, number>();
+const oneLetterValues = new Map<string, number>();
 
 twoLettersValues.set("IV", 4);
 twoLettersValues.set("IX", 9);

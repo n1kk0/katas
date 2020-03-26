@@ -5,8 +5,8 @@ export function superStreetFighterSelection(
 ): string[] {
     const output: string[] = [];
 
-    for(let i in moves) {
-        switch (moves[i]) {
+    moves.forEach((v) => {
+        switch (v) {
             case "up":
                 position = getUpPosition(position, fighters);
                 break;
@@ -20,17 +20,17 @@ export function superStreetFighterSelection(
                 position = getLeftPosition(position, fighters);
                 break;
             default:
-                throw("Bad movement code :" + moves[i]);
+                throw("Bad movement code :${v}");
         }
 
         output.push(fighters[position[0]][position[1]]);
-    }
+    });
 
     return output;
 }
 
 function getUpPosition(position:number[], fighters: Array<string[]>,) {
-    if (position[0] > 0 && fighters[position[0] - 1][position[1]] != "") {
+    if (position[0] > 0 && fighters[position[0] - 1][position[1]] !== "") {
         position[0]--;
     }
 
@@ -40,7 +40,7 @@ function getUpPosition(position:number[], fighters: Array<string[]>,) {
 function getDownPosition(position:number[], fighters: Array<string[]>,) {
     if (
         position[0] + 1 < fighters.length &&
-        fighters[position[0] + 1][position[1]] != ""
+        fighters[position[0] + 1][position[1]] !== ""
     ) {
         position[0]++;
     }
@@ -51,7 +51,7 @@ function getDownPosition(position:number[], fighters: Array<string[]>,) {
 function getRightPosition(position:number[], fighters: Array<string[]>,) {
     position[1]++;
 
-    while (fighters[position[0]][position[1] % fighters[position[0]].length] == "") {
+    while (fighters[position[0]][position[1] % fighters[position[0]].length] === "") {
         position[1]++;
     }
 
@@ -63,7 +63,7 @@ function getRightPosition(position:number[], fighters: Array<string[]>,) {
 function getLeftPosition(position:number[], fighters: Array<string[]>,) {
     position[1] = position[1] > 0 ? position[1] - 1 : fighters[0].length - 1;
 
-    while (fighters[position[0]][position[1] % fighters[position[0]].length] == "") {
+    while (fighters[position[0]][position[1] % fighters[position[0]].length] === "") {
         position[1] = position[1] > 0 ? position[1] - 1 : fighters[0].length - 1;
     }
 

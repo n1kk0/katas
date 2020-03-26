@@ -1,8 +1,8 @@
-interface MORSE_CODE {
+interface MORSECODE {
     [key: string]: string;
 }
 
-let MORSE_CODE: MORSE_CODE = {
+const MORSE_CODE: MORSECODE = {
     '-.-.--': '!',
     '.-..-.': '"',
     '...-..-': '$',

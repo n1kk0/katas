@@ -8,25 +8,25 @@ export function interpreter(code: string, tape: string): string {
     let tapePointer = 0;
 
     for(let codeStep = 0; codeStep < code.length; codeStep++) {
-        if (code[codeStep] == '*') {
+        if (code[codeStep] === '*') {
             tape = tape.substr(0, tapePointer) +
-                (tape[tapePointer] == "0" ? "1" : "0") +
+                (tape[tapePointer] === "0" ? "1" : "0") +
                 tape.substr(tapePointer + 1);
         }
 
-        if (code[codeStep] == '>') {
+        if (code[codeStep] === '>') {
             tapePointer++;
         }
 
-        if (code[codeStep] == '<') {
+        if (code[codeStep] === '<') {
             tapePointer--;
         }
 
-        if (code[codeStep] == '[' && tape[tapePointer] == "0") {
+        if (code[codeStep] === '[' && tape[tapePointer] === "0") {
             codeStep = getOtherBrace(bracketsRelations, codeStep, false);
         }
 
-        if (code[codeStep] == ']' && tape[tapePointer] == "1") {
+        if (code[codeStep] === ']' && tape[tapePointer] === "1") {
             codeStep = getOtherBrace(bracketsRelations, codeStep, true);
         }
 
@@ -43,22 +43,22 @@ function getOtherBrace(
     codeStep: number,
     direction: boolean
 ) {
-    let bracket = bracketsRelations.find(
-        (v) => (direction ? v.close : v.open) == codeStep
+    const bracket = bracketsRelations.find(
+        (v) => (direction ? v.close : v.open) === codeStep
     );
 
-    return bracket == undefined ? 0 :
+    return bracket === undefined ? 0 :
         (direction ? bracket.open : bracket.close);
 }
 
 function parseBrackets(code: string): BracketRelation[] {
-    let bracketsStack: number[] = [];
-    let bracketsRelations: BracketRelation[] = [];
+    const bracketsStack: number[] = [];
+    const bracketsRelations: BracketRelation[] = [];
   
     for (var i = 0; i < code.length; i++) {
-        if (code[i] == '[') {
+        if (code[i] === '[') {
             bracketsStack.push(i);
-        } else if (code[i] == ']') {
+        } else if (code[i] === ']') {
             bracketsRelations.push({
                 open: bracketsStack.pop() || 0,
                 close: i

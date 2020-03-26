@@ -34,16 +34,16 @@ export class G964 {
         return Math.round(distance);
     };
 
-    private static getTown = (
+    private static readonly getTown = (
         friendId: string,
         fTowns: Array<Array<string>>
     ): string => {
-        const town = fTowns.find((value, _, __) => value[0] == friendId);
+        const town = fTowns.find((value, _, __) => value[0] === friendId);
 
-        return town == undefined ? "" : town[1];
+        return town === undefined ? "" : town[1];
     }
 
-    private static getDistance = (
+    private static readonly getDistance = (
         town: string,
         distTable: Array<string|number>
     ): number => {

@@ -20,7 +20,7 @@ export function superStreetFighterSelection(
                 position = getLeftPosition(position, fighters);
                 break;
             default:
-                throw("Bad movement code :${v}");
+                throw new Error(`Bad movement code :${v}`);
         }
 
         output.push(fighters[position[0]][position[1]]);

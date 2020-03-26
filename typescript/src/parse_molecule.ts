@@ -88,12 +88,12 @@ function findMatchingBrace(tokens: string[]) : number {
     let braceId = 1;
     let id = 0;
 
-    for (const i in tokens) {
-        if (tokens[i] === '(') {
+    for (let v of tokens) {
+        if (v === '(') {
             braceId++;
         }
 
-        if (tokens[i] === ')') {
+        if (v === ')') {
             braceId--;
         }
 

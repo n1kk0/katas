@@ -6,8 +6,9 @@ interface BracketRelation {
 export function interpreter(code: string, tape: string): string {
     const bracketsRelations = parseBrackets(code);
     let tapePointer = 0;
+    let codeStep = 0;
 
-    for(let codeStep = 0; codeStep < code.length; codeStep++) {
+    while (codeStep < code.length) {
         if (code[codeStep] === '*') {
             tape = tape.substr(0, tapePointer) +
                 (tape[tapePointer] === "0" ? "1" : "0") +
@@ -33,6 +34,8 @@ export function interpreter(code: string, tape: string): string {
         if (tapePointer < 0 || tapePointer >= tape.length) {
             codeStep = code.length;
         }
+
+        codeStep++;
     }
 
     return tape;

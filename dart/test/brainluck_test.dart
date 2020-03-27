@@ -7,10 +7,19 @@ void main() {
     test(
       'test echo until byte 255 encountered',
       () => expect(
+        brainLuck('[-.,+]', 'Codewars${String.fromCharCode(255)}'),
+        equals('')
+      )
+    );
+
+    test(
+      'test echo until byte 255 encountered 2',
+      () => expect(
         brainLuck(',+[-.,+]', 'Codewars${String.fromCharCode(255)}'),
         equals('Codewars')
       )
     );
+
     test(
       'hello world',
       () => expect(

@@ -9,26 +9,39 @@ export function interpreter(code: string, tape: string): string {
     let codeStep = 0;
 
     while (codeStep < code.length) {
-        if (code[codeStep] === '*') {
-            tape = tape.substr(0, tapePointer) +
-                (tape[tapePointer] === "0" ? "1" : "0") +
-                tape.substr(tapePointer + 1);
-        }
+        switch (code[codeStep]) {
+            case '*':
+                tape = tape.substr(0, tapePointer) +
+                    switchTapeValue(tape[tapePointer]) +
+                    tape.substr(tapePointer + 1);
 
-        if (code[codeStep] === '>') {
-            tapePointer++;
-        }
+                break;
+            case '>':
+                tapePointer++;
+                break;
+            case '<':
+                tapePointer--;
+                break;
+            case '[':
+                if (tape[tapePointer] === "0") {
+                    codeStep = getOtherBrace(
+                        bracketsRelations,
+                        codeStep,
+                        false
+                    );
+                }
 
-        if (code[codeStep] === '<') {
-            tapePointer--;
-        }
+                break;
+            case ']':
+                if (tape[tapePointer] === "1") {
+                    codeStep = getOtherBrace(
+                        bracketsRelations,
+                        codeStep,
+                        true
+                    );
+                }
 
-        if (code[codeStep] === '[' && tape[tapePointer] === "0") {
-            codeStep = getOtherBrace(bracketsRelations, codeStep, false);
-        }
-
-        if (code[codeStep] === ']' && tape[tapePointer] === "1") {
-            codeStep = getOtherBrace(bracketsRelations, codeStep, true);
+                break;
         }
 
         if (tapePointer < 0 || tapePointer >= tape.length) {
@@ -39,6 +52,10 @@ export function interpreter(code: string, tape: string): string {
     }
 
     return tape;
+}
+
+function switchTapeValue(tapeStep: string): string {
+    return tapeStep === "0" ? "1" : "0";
 }
 
 function getOtherBrace(
